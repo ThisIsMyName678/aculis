@@ -1,0 +1,68 @@
+/* v0-globals.css — גרסה בטוחה ל-Tailwind v4/Turbopack (ללא @apply) */
+
+:root{
+    --brand: #6c24fd;
+    --radius: 12px;
+    color-scheme: light;
+  }
+  
+  /* טיפוגרפיה ורקע בסיס */
+  html, body{
+    background: #fff;
+    color: #111827; /* slate-900 */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* כפתורים — מצב בסיס + פוקוס נגיש */
+  button, [type='button'], [type='submit']{
+    border-radius: var(--radius);
+    font-weight: 600;
+    transition: all .3s ease;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+  }
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible{
+    outline: none;
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--brand) 70%, transparent);
+  }
+  
+  /* אינפוטים — רקע/מסגרת עקביים + פוקוס */
+  input, textarea, select{
+    border: 1px solid #e5e7eb; /* gray-200 */
+    border-radius: var(--radius);
+    padding: 8px 16px;
+    color: #111827;
+    background: transparent;
+    transition: border-color .2s ease, box-shadow .2s ease;
+    -webkit-appearance: none; appearance: none;
+  }
+  input::placeholder, textarea::placeholder{ color: #9ca3af; } /* gray-400 */
+  input:focus, textarea:focus, select:focus{
+    border-color: color-mix(in srgb, var(--brand) 75%, #e5e7eb);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--brand) 60%, transparent);
+  }
+  
+  /* כרום autofill */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus{
+    -webkit-box-shadow: 0 0 0 1000px #fff inset !important;
+    -webkit-text-fill-color: #111827 !important;
+  }
+  
+  /* סקשנים — מרווח אנכי נעים */
+  section{ padding-block: 5rem; }        /* ~py-20 */
+  @media (min-width: 768px){
+    section{ padding-block: 7rem; }      /* ~md:py-28 */
+  }
+  
+  /* קישורים — צבע מותג עם הובר עדין */
+  a{ color: var(--brand); transition: opacity .2s ease, color .2s ease; }
+  a:hover{ opacity: .9; }
+  
+  
